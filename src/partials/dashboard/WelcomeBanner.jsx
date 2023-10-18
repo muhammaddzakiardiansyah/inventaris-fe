@@ -1,6 +1,21 @@
 import React from 'react';
 
 function WelcomeBanner() {
+  const hours = new Date();
+  console.log(hours.getHours())
+
+  let say = '';
+
+  if(hours.getHours() <= 10) {
+     say = 'Selamat Pagi';
+  } else if(hours.getHours() <= 14) {
+    say = 'Selamat Siang';
+  } else if(hours.getHours() <= 17) {
+    say = 'Selamat Sore';
+  } else if(hours.getHours() <= 24) {
+    say = 'Selamat Malam';
+  }
+
   return (
     <div className="relative bg-indigo-200 dark:bg-indigo-500 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
       {/* Background illustration */}
@@ -47,8 +62,8 @@ function WelcomeBanner() {
 
       {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">Good afternoon, Acme Inc. 👋</h1>
-        <p className="dark:text-indigo-200">Here is what’s happening with your projects today:</p>
+        <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">{say}, Muhammad Dzaki</h1>
+        <p className="dark:text-indigo-200">Anda ingin melakukan apa hari ini?</p>
       </div>
     </div>
   );

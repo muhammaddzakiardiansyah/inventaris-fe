@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Inventaris</title>
     <script>
       if (localStorage.theme === 'dark' || !('theme' in localStorage)) {
         document.querySelector('html').classList.add('dark');
@@ -13,7 +13,10 @@
         document.querySelector('html').classList.remove('dark');
         document.querySelector('html').style.colorScheme = 'light';
       }        
-    </script>      
+    </script>
+    <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">  
   </head>
   <body class="font-inter antialiased bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
     <noscript>You need to enable JavaScript to run this app.</noscript>

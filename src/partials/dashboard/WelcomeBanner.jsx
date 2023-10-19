@@ -2,11 +2,10 @@ import React from 'react';
 
 function WelcomeBanner() {
   const hours = new Date();
-  console.log(hours.getHours())
 
   let say = '';
 
-  if(hours.getHours() <= 10) {
+  if(hours.getHours() <= 9) {
      say = 'Selamat Pagi';
   } else if(hours.getHours() <= 14) {
     say = 'Selamat Siang';

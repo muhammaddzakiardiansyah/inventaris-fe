@@ -10,7 +10,12 @@ import './css/style.css';
 import './charts/ChartjsConfig';
 
 // Import pages
-import Dashboard from './pages/Dashboard';
+import PageNotFound from './pages/PageNotFound';
+import DashboardPage from './pages/DashboardPage';
+import Lab1Pplg from './pages/Lab1Pplg';
+import Lab2Pplg from './pages/Lab2Pplg';
+import Lab3Pplg from './pages/Lab3Pplg';
+import Lab4Pplg from './pages/Lab4Pplg';
 
 function App() {
 
@@ -25,7 +30,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/dashboard" element={<DashboardPage />} />
+        <Route exact path="/dashboard/lab1pplg" element={<Lab1Pplg />} />
+        <Route exact path="/dashboard/lab2pplg" element={<Lab2Pplg />} />
+        <Route exact path="/dashboard/lab3pplg" element={<Lab3Pplg />} />
+        <Route exact path="/dashboard/lab4pplg" element={<Lab4Pplg />} />
+
+
+        <Route exact path="/*" element={<PageNotFound />} />
       </Routes>
     </>
   );

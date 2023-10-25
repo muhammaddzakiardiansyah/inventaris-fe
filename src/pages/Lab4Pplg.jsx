@@ -14,8 +14,6 @@ const Lab4Pplg = () => {
     const [spec, setSpec] = useState([]);
     const [loading, setLoading] = useState(false);
     const [refetch, setRefetch] = useState(false);
-    let loop = 1;
-    let loop2 = 1;
 
     // get data item
     useEffect(() => {
@@ -63,7 +61,7 @@ const Lab4Pplg = () => {
                         return (
                             <TR 
                             key={index}
-                            no={loop++}
+                            no={index + 1}
                             idBarang={item.id} 
                             kodeBarang={item.item_code}
                             namaBarang={item.item_name}
@@ -91,7 +89,7 @@ const Lab4Pplg = () => {
                         return (
                             <TrSpec
                                 key={index}
-                                no={loop2++}
+                                no={index + 1}
                                 nama={item.name}
                                 spek={item.spec}
                                 tempat={item.laboratory_name}

@@ -16,6 +16,8 @@ import Lab1Pplg from './pages/Lab1Pplg';
 import Lab2Pplg from './pages/Lab2Pplg';
 import Lab3Pplg from './pages/Lab3Pplg';
 import Lab4Pplg from './pages/Lab4Pplg';
+import DataSemuaBarang from './pages/DataSemuaBarang';
+import DataSpekSemuaBarang from './pages/DataSpekSemuaBarang';
 
 function App() {
 
@@ -30,13 +32,16 @@ function App() {
   return (
     <>
       <Routes>
+        {/* url dashboard */}
         <Route exact path="/dashboard" element={<DashboardPage />} />
-        <Route exact path="/dashboard/lab1pplg" element={<Lab1Pplg />} />
-        <Route exact path="/dashboard/lab2pplg" element={<Lab2Pplg />} />
-        <Route exact path="/dashboard/lab3pplg" element={<Lab3Pplg />} />
-        <Route exact path="/dashboard/lab4pplg" element={<Lab4Pplg />} />
-
-
+        <Route exact path='/data-semua-barang' element={<DataSemuaBarang />} />
+        <Route exact path='/data-spek-semua-barang' element={<DataSpekSemuaBarang />} />
+        {/* url lab pplg */}
+        <Route exact path="/lab-1-pplg" element={<Lab1Pplg />} />
+        <Route exact path="/lab-2-pplg" element={<Lab2Pplg />} />
+        <Route exact path="/lab-3-pplg" element={<Lab3Pplg />} />
+        <Route exact path="/lab-4-pplg" element={<Lab4Pplg />} />
+        {/* url not found */}
         <Route exact path="/*" element={<PageNotFound />} />
       </Routes>
     </>

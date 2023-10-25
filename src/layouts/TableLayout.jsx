@@ -1,5 +1,5 @@
 const TableLayout = (props) => {
-    const {children, tableItemTitle} = props;
+    const {children, tableItemTitle, tempat = true} = props;
   return (
     <div className="w-full bg-white shadow-lg rounded-2xl border border-gray-200">
       <header className="px-5 py-4 border-b border-gray-100">
@@ -43,9 +43,13 @@ const TableLayout = (props) => {
                 <th className="p-2 whitespace-nowrap">
                   <div className="font-semibold text-center">Sumber Dana</div>
                 </th>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-center">Tempat</div>
-                </th>
+                {tempat ? (
+                  <th className="p-2 whitespace-nowrap">
+                    <div className="font-semibold text-center">Tempat</div>
+                  </th>
+                ) : (
+                  ''
+                )}
                 <th className="p-2 whitespace-nowrap">
                   <div className="font-semibold text-center">Alat</div>
                 </th>

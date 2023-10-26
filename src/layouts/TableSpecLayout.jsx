@@ -22,6 +22,9 @@ const TableSpecLayout = (props) => {
                 <th className="p-2 whitespace-nowrap">
                   <div className="font-semibold text-center">Tempat</div>
                 </th>
+                <th className="p-2 whitespace-nowrap">
+                  <div className="font-semibold text-center">Alat</div>
+                </th>
               </tr>
             </thead>
             <tbody className="text-sm divide-y divide-gray-100">

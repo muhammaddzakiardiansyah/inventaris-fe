@@ -95,6 +95,7 @@ const Lab3Pplg = () => {
                                 nama={item.name}
                                 spek={item.spec}
                                 tempat={item.laboratory_name}
+                                idBarang={item.id}
                             />
                         )
                     })

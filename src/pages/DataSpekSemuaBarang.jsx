@@ -43,6 +43,7 @@ const DataSpekSemuaBarang = () => {
                               nama={item.name}
                               spek={item.spec}
                               tempat={item.laboratory_id}
+                              idBarang={item.id}
                             />
                         )
                     })

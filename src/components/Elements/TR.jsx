@@ -61,7 +61,7 @@ const TR = (props) => {
         ''
       )}
       <td className="p-2 whitespace-nowrap">
-        <Button type='submit' classname='btn btn-sm bg-yellow-300 hover:bg-yellow-500 text-white'><Link to={'/dashboard/edit/item/' + idBarang}>Edit</Link></Button> | <Button type='submit' classname='btn btn-sm bg-red-500 hover:bg-red-800 text-white'><Link to={'/dashboard/delete/item/' + idBarang}>Delete</Link></Button>
+        <Button type='submit' classname='btn btn-sm bg-yellow-300 hover:bg-yellow-500 text-black'><Link to={'/dashboard/edit/item/' + idBarang}><ion-icon name="create"></ion-icon></Link></Button> | <Button type='submit' classname='btn btn-sm bg-red-500 hover:bg-red-800 text-black'><Link to={'/dashboard/delete/item/' + idBarang}><ion-icon name="trash"></ion-icon></Link></Button>
       </td>
     </tr>
   );

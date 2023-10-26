@@ -3,15 +3,15 @@ import Label from "../Elements/Label"
 
 const FormInput = (props) => {
 
-    const { onSubmit  } = props;
+    const { onSubmit, type, placeholder, id, name, required, lableTitle, buttonTitle, btnClassname } = props;
 
     return (
         <form action="" className="bg-slate-200">
             <div className="p-5">
-                <Label></Label>
-                <Input />
+                <Label htmlFor={id}>{lableTitle}</Label>
+                <Input type={type} placeholder={placeholder} id={id} name={name} {...required} />
             </div>
-            <Button classname="px-5 py-2 bg-green-600 hover:bg-green-800 rounded-lg">Tambah</Button>
+            <Button classname={btnClassname} >{buttonTitle}</Button>
         </form>
     )
 }

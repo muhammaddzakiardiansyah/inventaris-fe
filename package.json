@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "alert": "^6.0.1",
     "axios": "^1.5.1",
     "chart.js": "^4.3.0",
     "chartjs-adapter-moment": "^1.0.1",
@@ -17,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-flatpickr": "^3.10.13",
     "react-router-dom": "^6.11.2",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "sweet": "^0.1.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.1.0",

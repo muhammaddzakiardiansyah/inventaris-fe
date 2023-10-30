@@ -34,7 +34,7 @@ const TambahDataBarang = () => {
       )
       setTimeout(() => {
          window.location.href = '/data-semua-barang'
-      }, 3000)
+      }, 2000)
       console.log(result);
     } catch (error) {
       Swal.fire(

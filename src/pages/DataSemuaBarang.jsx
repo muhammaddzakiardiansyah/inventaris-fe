@@ -23,6 +23,33 @@ const DataSemuaBarang = () => {
     useEffect(() => {
         document.title = 'Data Semua Barang'
     })
+
+    const handleClick = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              axios({
+                method: 'DELETE',
+                url: `http://localhost:4000/api/v1/items/${id}`
+              })
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              );
+              setTimeout(() => {
+                  window.location.reload();
+              }, 1500)
+            }
+          })
+    }
     return (
         <Dashboard>
             <TableLayout
@@ -50,6 +77,7 @@ const DataSemuaBarang = () => {
                             tahunPembelian={item.year_of_purchase}
                             sumberDana={item.origin}
                             tempat={item.laboratory_name}
+                            onClick={() => handleClick(item.id)}
                             />
                         )
                     })

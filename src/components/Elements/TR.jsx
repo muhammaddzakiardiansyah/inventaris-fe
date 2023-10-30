@@ -16,6 +16,7 @@ const TR = (props) => {
         tahunPembelian,
         sumberDana,
         tempat,
+        onClick
       } = props;
 
   return (
@@ -61,7 +62,7 @@ const TR = (props) => {
         ''
       )}
       <td className="p-2 whitespace-nowrap">
-        <Button type='submit' classname='btn btn-sm bg-yellow-300 hover:bg-yellow-500 text-black'><Link to={'/dashboard/edit/item/' + idBarang}><ion-icon name="create"></ion-icon></Link></Button> | <Button type='submit' classname='btn btn-sm bg-red-500 hover:bg-red-800 text-black'><Link to={'/dashboard/delete/item/' + idBarang}><ion-icon name="trash"></ion-icon></Link></Button>
+        <Button type='submit' classname='btn btn-sm bg-yellow-300 hover:bg-yellow-500 text-black'><Link to={'/edit-data-barang/' + idBarang}><ion-icon name="create"></ion-icon></Link></Button> | <Button type='submit' classname='btn btn-sm bg-red-500 hover:bg-red-800 text-black' onClick={onClick}><ion-icon name="trash"></ion-icon></Button>
       </td>
     </tr>
   );

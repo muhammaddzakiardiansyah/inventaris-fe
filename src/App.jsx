@@ -22,6 +22,9 @@ import TambahDataBarang from './pages/TambahDataBarang';
 import EditDataSemuaBarang from './pages/EditDataSemuaBarang';
 import EditSpekDataBarang from './pages/EditSpekDataBarang';
 import TambahSpekDataBarang from './pages/TambahSpekDataBarang';
+import DataSemuaLab from './pages/DataSemuaLab';
+import TambahDataLab from './pages/TambahDataLab';
+import EditDataLab from './pages/EditDataLab';
 
 function App() {
 
@@ -44,6 +47,9 @@ function App() {
         <Route exact path='/tambah-spek-data-barang' element={<TambahSpekDataBarang />} />
         <Route exact path='/edit-data-barang/:id' element={<EditDataSemuaBarang />} />
         <Route exact path='/edit-spek-data-barang/:id' element={<EditSpekDataBarang />} />
+        <Route exact path='/data-semua-lab' element={<DataSemuaLab />} />
+        <Route exact path='/tambah-lab' element={<TambahDataLab />} />
+        <Route exact path='/edit-lab/:id' element={<EditDataLab />} />
         {/* url lab pplg */}
         <Route exact path="/lab-1-pplg" element={<Lab1Pplg />} />
         <Route exact path="/lab-2-pplg" element={<Lab2Pplg />} />

@@ -96,10 +96,10 @@ const Lab2Pplg = () => {
                         'Your file has been deleted.',
                         'success'
                     )
+                    setTimeout(() => {
+                        window.location.reload()
+                    }, 1500);
                 }
-                setTimeout(() => {
-                    window.location.reload()
-                }, 1500);
               })
         } catch (error) {
             Swal.fire(

@@ -29,7 +29,7 @@ const TrSpec = (props) => {
       </td>
       <td className="p-2 whitespace-nowrap flex justify-center items-center gap-1">
       <Link to={'/edit-spek-data-barang/' + idBarang}>
-        <Button type='submit' classname='btn btn-sm bg-yellow-300 hover:bg-yellow-500 text-black'><ion-icon name="create"></ion-icon></Button></Link> | <Button type='submit' classname='btn btn-sm bg-red-500 hover:bg-red-800 text-black' onClick={onClick}><ion-icon name="trash"></ion-icon></Button>
+        <Button type='submit' classname='btn btn-sm bg-yellow-100 hover:bg-yellow-300 text-black'><ion-icon name="pencil-outline"></ion-icon></Button></Link> | <Button type='submit' classname='btn btn-sm bg-red-100 hover:bg-red-300 text-black' onClick={onClick}><ion-icon name="trash-outline"></ion-icon></Button>
       </td>
     </tr>
   );

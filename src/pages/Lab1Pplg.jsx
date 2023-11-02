@@ -14,15 +14,14 @@ const Lab1Pplg = () => {
     const [spec, setSpec] = useState([]);
     const [loading, setLoading] = useState(false);
     const [refetch, setRefetch] = useState(false);
-    let loop = 1;
-    let loop2 = 1;
 
     // get data item
     useEffect(() => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'http://localhost:4000/api/v1/laboratories/per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
+            url: 'http://200.100.0.43:4000/api/v1/laboratories/per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
+            // url: `${process.env.REACT_APP_LOCAL_PORT}/laboratories/per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9`
         })
         .then((res) => {
             return setData(res.data.data)
@@ -36,7 +35,7 @@ const Lab1Pplg = () => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'http://localhost:4000/api/v1/laboratories/spec-per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
+            url: 'http://200.100.0.43:4000/api/v1/laboratories/spec-per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
         })
         .then((res) => {
             return setSpec(res.data.data);
@@ -63,7 +62,7 @@ const Lab1Pplg = () => {
             if (result.isConfirmed) {
               axios({
                 method: 'DELETE',
-                url: `http://localhost:4000/api/v1/items/${id}`
+                url: `http://200.100.0.43:4000/api/v1/items/${id}`
               })
               Swal.fire(
                 'Deleted!',
@@ -125,7 +124,7 @@ const Lab1Pplg = () => {
                         return (
                             <TR 
                             key={index}
-                            no={loop++}
+                            no={index + 1}
                             idBarang={item.id} 
                             kodeBarang={item.item_code}
                             namaBarang={item.item_name}
@@ -154,7 +153,7 @@ const Lab1Pplg = () => {
                         return (
                             <TrSpec
                                 key={index}
-                                no={loop2++}
+                                no={index + 1}
                                 nama={item.name}
                                 spek={item.spec}
                                 tempat={item.laboratory_name}

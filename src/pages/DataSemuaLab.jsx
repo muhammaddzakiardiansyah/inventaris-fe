@@ -11,7 +11,7 @@ const DataSemuaLab = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: "http://localhost:4000/api/v1/laboratories",
+      url: "http://200.100.0.43:4000/api/v1/laboratories",
     })
       .then((res) => setDataLab(res.data.data))
       .catch((err) => console.log(err))
@@ -36,7 +36,7 @@ const DataSemuaLab = () => {
         try {
           const res = await axios({
             method: "DELETE",
-            url: `http://localhost:4000/api/v1/laboratories/${id}`,
+            url: `http://200.100.0.43:4000/api/v1/laboratories/${id}`,
           });
           Swal.fire("Deleted!", res.data.response.message, "success");
           setTimeout(() => {

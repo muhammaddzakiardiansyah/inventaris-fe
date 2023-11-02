@@ -20,7 +20,7 @@ const Lab4Pplg = () => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'http://localhost:4000/api/v1/laboratories/per-lab/97e8aa14-d236-4e97-9537-4da4aa1ac9a1'
+            url: 'http://200.100.0.43:4000/api/v1/laboratories/per-lab/97e8aa14-d236-4e97-9537-4da4aa1ac9a1'
         })
         .then((res) => {
             return setData(res.data.data)
@@ -34,7 +34,7 @@ const Lab4Pplg = () => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'http://localhost:4000/api/v1/laboratories/spec-per-lab/97e8aa14-d236-4e97-9537-4da4aa1ac9a1'
+            url: 'http://200.100.0.43:4000/api/v1/laboratories/spec-per-lab/97e8aa14-d236-4e97-9537-4da4aa1ac9a1'
         })
         .then((res) => {
             return setSpec(res.data.data);
@@ -61,7 +61,7 @@ const Lab4Pplg = () => {
             if (result.isConfirmed) {
               axios({
                 method: 'DELETE',
-                url: `http://localhost:4000/api/v1/items/${id}`
+                url: `http://200.100.0.43:4000/api/v1/items/${id}`
               })
               Swal.fire(
                 'Deleted!',
@@ -89,7 +89,7 @@ const Lab4Pplg = () => {
                 if (result.isConfirmed) {
                     const result = await axios({
                         method: 'DELETE',
-                        url: `http://localhost:4000/api/v1/specifications/${id}`
+                        url: `http://200.100.0.43:4000/api/v1/specifications/${id}`
                     })
                     Swal.fire(
                         'Deleted!',

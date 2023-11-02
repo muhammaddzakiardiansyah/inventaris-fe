@@ -16,7 +16,7 @@ const EditSpekDataBarang = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: `http://localhost:4000/api/v1/specifications/${id}`,
+      url: `http://200.100.0.43:4000/api/v1/specifications/${id}`,
     })
       .then((res) => setEditSpekDataBarang(res.data.data[0]))
       .catch((err) => console.log(err))
@@ -28,7 +28,7 @@ const EditSpekDataBarang = () => {
     try {
       const result = await axios({
         method: "PATCH",
-        url: `http://localhost:4000/api/v1/specifications/${id}`,
+        url: `http://200.100.0.43:4000/api/v1/specifications/${id}`,
         data: editSpekDataBarang,
       });
       Swal.fire(

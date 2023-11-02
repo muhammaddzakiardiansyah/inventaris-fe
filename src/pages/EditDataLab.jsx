@@ -17,7 +17,7 @@ const EditDataLab = () => {
         setLoading(true)
         axios({
             method: 'GET',
-            url: `http://localhost:4000/api/v1/laboratories/${id}`
+            url: `http://200.100.0.43:4000/api/v1/laboratories/${id}`
         })
         .then((res) => setDataLab(res.data.data[0]))
         .catch((err) => console.log(err))
@@ -29,7 +29,7 @@ const EditDataLab = () => {
         try {
             const res = await axios({
                 method: 'PUT',
-                url: `http://localhost:4000/api/v1/laboratories/${id}`,
+                url: `http://200.100.0.43:4000/api/v1/laboratories/${id}`,
                 data: dataLab,
             })
             Swal.fire(

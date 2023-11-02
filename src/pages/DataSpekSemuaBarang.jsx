@@ -13,7 +13,7 @@ const DataSpekSemuaBarang = () => {
         setLoading(true)
         axios({
             method: 'GET',
-            url: 'http://localhost:4000/api/v1/specifications'
+            url: 'http://200.100.0.43:4000/api/v1/specifications'
         })
         .then((res) => setDataSpecItem(res.data.data))
         .catch((err) => console.log(err))
@@ -34,7 +34,7 @@ const DataSpekSemuaBarang = () => {
                 if (result.isConfirmed) {
                     const result = await axios({
                         method: 'DELETE',
-                        url: `http://localhost:4000/api/v1/specifications/${id}`
+                        url: `http://200.100.0.43:4000/api/v1/specifications/${id}`
                     })
                     Swal.fire(
                         'Deleted!',

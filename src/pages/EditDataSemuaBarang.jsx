@@ -17,7 +17,7 @@ const EditDataSemuaBarang = () => {
         setLoading(true)
         axios({
             method: 'GET',
-            url: `http://localhost:4000/api/v1/items/${id}`,
+            url: `http://200.100.0.43:4000/api/v1/items/${id}`,
         })
         .then((res) => setEditDataBarang(res.data.data))
         .catch((err) => console.log(err))
@@ -29,7 +29,7 @@ const EditDataSemuaBarang = () => {
         try {
             const result = await axios({
                 method: 'PUT',
-                url: `http://localhost:4000/api/v1/items/${id}`,
+                url: `http://200.100.0.43:4000/api/v1/items/${id}`,
                 data: editDataBarang
             })
             Swal.fire(

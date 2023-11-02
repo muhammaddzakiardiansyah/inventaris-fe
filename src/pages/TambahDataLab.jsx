@@ -16,7 +16,7 @@ const TambahDataLab = () => {
         try {
             const res = await axios({
                 method: 'POST',
-                url: 'http://localhost:4000/api/v1/laboratories',
+                url: 'http://200.100.0.43:4000/api/v1/laboratories',
                 data: dataLab
             })
             Swal.fire(

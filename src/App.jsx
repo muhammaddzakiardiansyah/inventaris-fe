@@ -35,9 +35,7 @@ function App() {
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
   }, [location.pathname]); // triggered on route change
-
   return (
-    <>
       <Routes>
         {/* url dashboard */}
         <Route exact path="/dashboard" element={<DashboardPage />} />
@@ -58,7 +56,6 @@ function App() {
         {/* url not found */}
         <Route exact path="/*" element={<PageNotFound />} />
       </Routes>
-    </>
   );
 }
 

@@ -23,25 +23,17 @@ const TambahDataBarang = () => {
     try {
       e.preventDefault();
       const result = await axios({
-        method: 'POST',
-        url: 'http://200.100.0.43:4000/api/v1/items',
-        data: tambahDataBarang
-      })
-      Swal.fire(
-        'Good job!',
-        'Request has successed!',
-        'success'
-      )
+        method: "POST",
+        url: "http://200.100.0.43:4000/api/v1/items",
+        data: tambahDataBarang,
+      });
+      Swal.fire("Created!", "Request has successed!", "success");
       setTimeout(() => {
-         window.location.href = '/data-semua-barang'
-      }, 2000)
+        window.location.href = "/data-semua-barang";
+      }, 2000);
       console.log(result);
     } catch (error) {
-      Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'error'
-      )
+      Swal.fire("Failed!", error, "error");
       console.log(error);
     }
   };
@@ -62,7 +54,12 @@ const TambahDataBarang = () => {
                 placeholder="Masukan Kode Barang"
                 id="item_code"
                 name="item_code"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, item_code: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    item_code: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
@@ -72,7 +69,12 @@ const TambahDataBarang = () => {
                 placeholder="Masukan Nama Barang"
                 id="item_name"
                 name="item_name"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, item_name: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    item_name: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
@@ -82,7 +84,12 @@ const TambahDataBarang = () => {
                 placeholder="Masukan Nomor Registrasi"
                 id="registration_number"
                 name="registration_number"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, registration_number: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    registration_number: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
@@ -92,18 +99,28 @@ const TambahDataBarang = () => {
                 placeholder="Masukan Merk Barang"
                 id="brand"
                 name="brand"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, brand: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    brand: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
               <Label htmlFor="condition">Kondisi Barang</Label>
-              <Input
-                type="text"
-                placeholder="Masukan Kondisi Barang"
-                id="condition"
-                name="condition"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, condition: e.target.value})}
-              />
+              <input list="consitions" name="condition" id="condition" className="w-full rounded-lg" placeholder="Masukan Kondisi barang" onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    condition: e.target.value,
+                  })
+                } />
+              <datalist id="consitions">
+                <option value="Normal" />
+                <option value="Baru" />
+                <option value="Rekondisi" />
+                <option value="Rusak" />
+              </datalist>
             </div>
             <div className="py-2 px-5">
               <Label htmlFor="amount">Jumlah Barang</Label>
@@ -112,7 +129,12 @@ const TambahDataBarang = () => {
                 placeholder="Masukan Jumlah Barang"
                 id="amount"
                 name="amount"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, amount: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    amount: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
@@ -122,28 +144,43 @@ const TambahDataBarang = () => {
                 placeholder="Masukan Kode Barang"
                 id="stock"
                 name="stock"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, stock: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    stock: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
               <Label htmlFor="year_of_purchase">Tahun Pembelian</Label>
               <Input
-                type="text"
+                type="month"
                 placeholder="Masukan Tahun Pembelian Barang"
                 id="year_of_purchase"
                 name="year_of_purchase"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, year_of_purchase: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    year_of_purchase: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="py-2 px-5">
               <Label htmlFor="origin">Sumber Dana</Label>
-              <Input
-                type="text"
-                placeholder="Masukan Kode Barang"
-                id="origin"
-                name="origin"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, origin: e.target.value})}
-              />
+              <input list="origins" name="origin" id="origin" className="w-full rounded-lg" placeholder="Masukan Sumber Dana" onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    origin: e.target.value,
+                  })
+                } />
+              <datalist id="origins">
+                <option value="BOS" />
+                <option value="Komite" />
+                <option value="Kas" />
+                <option value="UP" />
+              </datalist>
             </div>
             <div className="py-2 px-5">
               <Label htmlFor="laboratory_id">Tempat/Lab</Label>
@@ -151,7 +188,12 @@ const TambahDataBarang = () => {
                 name="laboratory_id"
                 id="laboratory_id"
                 className="w-full rounded-lg"
-                onChange={(e) => setTambahDataBarang({...tambahDataBarang, laboratory_id: e.target.value})}
+                onChange={(e) =>
+                  setTambahDataBarang({
+                    ...tambahDataBarang,
+                    laboratory_id: e.target.value,
+                  })
+                }
               >
                 <option value="">Pilih Tempat/Lab</option>
                 <option value="d565203b-ed98-4fca-880c-2be3cbd43cc9">

@@ -25,6 +25,7 @@ import TambahSpekDataBarang from './pages/TambahSpekDataBarang';
 import DataSemuaLab from './pages/DataSemuaLab';
 import TambahDataLab from './pages/TambahDataLab';
 import EditDataLab from './pages/EditDataLab';
+import HomeItemBorrowed from './pages/HomeItemBorrowed';
 
 function App() {
 
@@ -55,6 +56,9 @@ function App() {
         <Route exact path="/lab-4-pplg" element={<Lab4Pplg />} />
         {/* url not found */}
         <Route exact path="/*" element={<PageNotFound />} />
+
+        {/* url web pinjamin codepelita */}
+        <Route exact path='/codepelita-pinjamin' element={<HomeItemBorrowed />} />
       </Routes>
   );
 }

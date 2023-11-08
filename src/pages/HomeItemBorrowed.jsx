@@ -2,9 +2,10 @@ import { Fragment, useEffect } from "react";
 import Navbar from "../components/Navbar"
 import HeaderItemBorrowed from "../components/HeaderItemBorrowed";
 import MainItemBorrowed from "../components/MainItemBorrowed";
-
+import FooterItemBorrowed from "../components/FooterItemBorrowed";
+import AOS from 'aos'
 const HomeItemBorrowed = () => {
-
+    AOS.init()
     useEffect(() => {
         document.title = 'Codepelita Home'
     })
@@ -13,7 +14,7 @@ const HomeItemBorrowed = () => {
             <Navbar navbarTitle='Codepelita Pinjamin' />
             <HeaderItemBorrowed />
             <MainItemBorrowed />
-            <div className="mb-20"></div>
+            <FooterItemBorrowed />
         </>
     )
 }

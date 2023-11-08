@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import './css/style.css';
-
+import AOS from 'aos';
 import './charts/ChartjsConfig';
 
 // Import pages
@@ -28,6 +28,8 @@ import EditDataLab from './pages/EditDataLab';
 import HomeItemBorrowed from './pages/HomeItemBorrowed';
 
 function App() {
+
+  AOS.init()
 
   const location = useLocation();
 

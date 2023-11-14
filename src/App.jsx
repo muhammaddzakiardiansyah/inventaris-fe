@@ -4,6 +4,7 @@ import {
   Route,
   useLocation
 } from 'react-router-dom';
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 import './css/style.css';
 import AOS from 'aos';
@@ -26,10 +27,15 @@ import DataSemuaLab from './pages/DataSemuaLab';
 import TambahDataLab from './pages/TambahDataLab';
 import EditDataLab from './pages/EditDataLab';
 import HomeItemBorrowed from './pages/HomeItemBorrowed';
+import DataBarangDipinjam from './pages/DataBarangDipinjam';
+import TambahBarangDipinjam from './pages/TambahBarangDipinjam';
+import PulanginBarangDipinjam from './pages/PulanginBarangDipinjam';
 
 function App() {
 
   AOS.init()
+
+  const queryClient = new QueryClient();
 
   const location = useLocation();
 
@@ -39,11 +45,13 @@ function App() {
     document.querySelector('html').style.scrollBehavior = ''
   }, [location.pathname]); // triggered on route change
   return (
+    <QueryClientProvider client={queryClient}>
       <Routes>
         {/* url dashboard */}
         <Route exact path="/dashboard" element={<DashboardPage />} />
         <Route exact path='/data-semua-barang' element={<DataSemuaBarang />} />
         <Route exact path='/data-spek-semua-barang' element={<DataSpekSemuaBarang />} />
+        <Route exact path='/data-barang-dipinjam' element={<DataBarangDipinjam />} />
         <Route exact path='/tambah-data-barang' element={<TambahDataBarang />} />
         <Route exact path='/tambah-spek-data-barang' element={<TambahSpekDataBarang />} />
         <Route exact path='/edit-data-barang/:id' element={<EditDataSemuaBarang />} />
@@ -61,7 +69,10 @@ function App() {
 
         {/* url web pinjamin codepelita */}
         <Route exact path='/codepelita-pinjamin' element={<HomeItemBorrowed />} />
+        <Route exact path='/codepelita-pinjam' element={<TambahBarangDipinjam />} />
+        <Route exact path='/codepelita-pulangin' element={<PulanginBarangDipinjam />} />
       </Routes>
+    </QueryClientProvider>
   );
 }
 

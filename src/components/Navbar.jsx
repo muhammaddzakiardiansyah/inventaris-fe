@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
   const { navbarTitle } = props
@@ -30,10 +31,9 @@ const Navbar = (props) => {
             </span>
         </div>
         <ul className="md:flex absolute bg-slate-100 md:bg-transparent mt-5 left-0 md:p-0 p-3 w-full mr-5 z-[10] md:z-auto md:static md:mt-1 md:w-auto md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 text-black cursor-pointer">
-            <li className="px-5 font-semibold py-3 hover:text-[#03C988]">Home</li>
-            <li className="px-5 font-semibold py-3 hover:text-[#03C988]">Peminjaman Barang</li>
-            <li className="px-5 font-semibold py-3 hover:text-[#03C988]">Pengembalian Barang</li>
-            <li className="px-5 font-semibold py-3 hover:text-[#03C988]">Lainya</li>
+            <Link to={'/codepelita-pinjamin'}><li className="px-5 font-semibold py-3 hover:text-[#03C988]">Home</li></Link>
+            <Link to={'/codepelita-pinjam'}><li className="px-5 font-semibold py-3 hover:text-[#03C988]">Peminjaman Barang</li></Link>
+            <Link to={'/codepelita-pulangin'}><li className="px-5 font-semibold py-3 hover:text-[#03C988]">Pengembalian Barang</li></Link>
         </ul>
         </nav>
   );

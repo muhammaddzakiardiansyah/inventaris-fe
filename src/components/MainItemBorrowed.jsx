@@ -9,15 +9,15 @@ const MainItemBorrowed = () => {
   return (
     <>
     <div className="container mx-auto h-[60vh]">
-      <h2 className="text-xl md:text-4xl font-bold text-center py-5 text-black">Kenalan Dengan <span className="text-[#03C988]">Codepelita</span> yuk..</h2>
+      <h2 className="text-xl md:text-4xl font-bold text-center py-5 text-black" data-aos="fade-down" data-aos-duration="1500">Kenalan Dengan <span className="text-[#03C988]">Codepelita</span> yuk..</h2>
       <div className="box mx-auto relative mt-10">
-        <div className="tooltip absolute px-5 py-2 text-sm md:text-xl md:top-12 md:left-48 rounded-xl font-semibold bg-slate-100 top-7 left-[105px]" data-tip={articles.hii}>
+        <div className="tooltip absolute px-5 py-2 text-sm md:text-xl md:top-12 md:left-48 rounded-xl font-semibold bg-slate-100 top-7 left-[105px]" data-tip={articles.hii} data-aos="fade-right" data-aos-duration="1500" data-aos-delay="70">
             Hii !!
         </div>
-        <div className="tooltip top-[330px] left-[105px] absolute px-5 py-2 md:text-xl text-sm tooltip-bottom rounded-xl font-semibold bg-slate-100 md:left-80 md:top-[360px]" data-tip={articles.apaGunanyaAku}>
+        <div className="tooltip top-[330px] left-[105px] absolute px-5 py-2 md:text-xl text-sm tooltip-bottom rounded-xl font-semibold bg-slate-100 md:left-80 md:top-[360px]" data-tip={articles.apaGunanyaAku} data-aos="fade-right" data-aos-duration="2500" >
            Apa gunanya aku ?
         </div>
-        <div className="tooltip absolute px-5 py-2 text-sm md:text-xl rounded-xl font-semibold bg-slate-100 top-[270px] left-[105px] md:top-32 md:left-[75%]" data-tip={articles.codepelitaItuApa}>
+        <div className="tooltip absolute px-5 py-2 text-sm md:text-xl rounded-xl font-semibold bg-slate-100 top-[270px] left-[105px] md:top-32 md:left-[75%]" data-tip={articles.codepelitaItuApa} data-aos="fade-left" data-aos-duration="2000" >
            Codepelita itu apa ?
         </div>
         <div className="image flex justify-center items-center">
@@ -30,8 +30,8 @@ const MainItemBorrowed = () => {
       </div>
     </div>
     <div className="mx-auto h-[25vh] bg-slate-100 mt-16 mb-10 md:mt-52">
-      <h2 className="text-center md:text-2xl font-bold py-5 text-xl text-black">Mau <span className="text-[#03C988]">pinjam</span> laptop/lain"<br /> dari codepelita ?</h2>
-      <button className="bg-[#03C988] px-5 py-2 rounded-full block mx-auto font-semibold text-black"><Link to='/codepelita-pinjam'>Klik Disini</Link></button>
+      <h2 className="text-center md:text-2xl font-bold py-5 text-xl text-black" data-aos="zoom-in" data-aos-duration="1500">Mau <span className="text-[#03C988]">pinjam</span> laptop/lain"<br /> dari codepelita ?</h2>
+      <button className="bg-[#03C988] px-5 py-2 rounded-full block mx-auto font-semibold text-black" data-aos="fade-up" data-aos-duration="2200"><Link to='/codepelita-pinjam'>Klik Disini</Link></button>
     </div>
     </>
   );

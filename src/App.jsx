@@ -7,7 +7,6 @@ import {
 import { QueryClientProvider, QueryClient } from 'react-query';
 
 import './css/style.css';
-import AOS from 'aos';
 import './charts/ChartjsConfig';
 
 // Import pages
@@ -30,11 +29,16 @@ import HomeItemBorrowed from './pages/HomeItemBorrowed';
 import DataBarangDipinjam from './pages/DataBarangDipinjam';
 import TambahBarangDipinjam from './pages/TambahBarangDipinjam';
 import PulanginBarangDipinjam from './pages/PulanginBarangDipinjam';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
 
-  AOS.init()
-
+  useEffect(() => {
+    Aos.init({
+      once: true
+    })
+  }, [])
   const queryClient = new QueryClient();
 
   const location = useLocation();

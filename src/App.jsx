@@ -33,9 +33,11 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import DataBarangDipulangkan from './pages/DataBarangDipulangkan';
 import EditDataBarangDipulangkan from './pages/EditDataBarangDipulangkan';
+import Login from './pages/LoginPage';
 
 function App() {
 
+  const token = localStorage.getItem('xixixi');
   useEffect(() => {
     Aos.init({
       once: true
@@ -53,6 +55,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
+        {/* login url */}
+        <Route exact path='/login' element={<Login />} />
         {/* url dashboard */}
         <Route exact path="/dashboard" element={<DashboardPage />} />
         <Route exact path='/data-semua-barang' element={<DataSemuaBarang />} />

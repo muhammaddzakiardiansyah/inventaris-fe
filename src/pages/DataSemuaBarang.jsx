@@ -13,7 +13,7 @@ const DataSemuaBarang = () => {
         setLoading(true)
         axios({
             method: 'GET',
-            url: 'http://200.100.0.43:4000/api/v1/items'
+            url: 'http://200.100.0.59:4000/api/v1/items'
         })
         .then((res) => setDataItem(res.data.data))
         .catch((err) => console.log(err))
@@ -37,7 +37,7 @@ const DataSemuaBarang = () => {
             if (result.isConfirmed) {
               axios({
                 method: 'DELETE',
-                url: `http://200.100.0.43:4000/api/v1/items/${id}`
+                url: `http://200.100.0.59:4000/api/v1/items/${id}`
               })
               Swal.fire(
                 'Deleted!',

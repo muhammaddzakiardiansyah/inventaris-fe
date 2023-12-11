@@ -1,17 +1,18 @@
 import { useQuery } from "react-query";
 import TRBorrowed from "../components/Elements/TRBorrowed";
 import Dashboard from "../layouts/Dashboard"
-import TableBorrowed from "../layouts/TableBorrowed";
 import axios from "axios";
+import TableReturned from "../layouts/TableReturned";
+import TRReturned from "../components/Elements/TRReturned";
 
 const fetchData = () => {
     return axios({
         method: 'GET',
-        url: 'http://200.100.0.59:4000/api/v1/items-borrowed'
+        url: 'http://200.100.0.59:4000/api/v1/items-returned'
     });
 }
 
-const DataBarangDipinjam = () => {
+const DataBarangDipulangkan = () => {
 
     const { isLoading, data, isError, error} = useQuery('data-barang-dipinjam', fetchData);
     
@@ -20,26 +21,26 @@ const DataBarangDipinjam = () => {
             {isLoading ? (
                 <h2>Loading</h2>
             ) : (
-            <TableBorrowed tableBorrowedTitle='Data Barang Dipinjam'>
+            <TableReturned tableReturnedTitle='Data Barang Dipulangkan'>
                 {data?.data.data.map((item, index) => {
                     return (
-                        <TRBorrowed
+                        <TRReturned
                            key={index}
                            no={index + 1}
                            idBarang={item.id}
                            namaBarangDipinjam={item.item_name_borrowed}
                            namaPeminjam={item.borrowed_name}
-                           kontak={item.contact}
+                           confirmation={item.confirmation}
                            kodeBarang={item.item_code}
-                           tanggalDipinjam={item.date_borrowed}
+                           tanggalDipinjam={item.date_returned}
                            onClick=''
                         />
                     )
                 })}
-            </TableBorrowed>   
+            </TableReturned>   
             )}
         </Dashboard>
     )
 }
 
-export default DataBarangDipinjam;
+export default DataBarangDipulangkan;

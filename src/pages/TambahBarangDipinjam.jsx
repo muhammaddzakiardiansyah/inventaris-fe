@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/Elements/Button";
 import Input from "../components/Elements/Input"
 import Label from "../components/Elements/Label"
@@ -6,56 +6,65 @@ import Navbar from "../components/Navbar";
 
 const TambahBarangDipinjam = () => {
 
+    const [data, setData] = useState({
+      "item_name_borrowed": " ",
+      "borrowed_name": " ",
+      "contact": " ",
+      "item_code": " ",
+      "date_borrowed": " ",
+    });
+
     useEffect(() => {
         document.title = 'Pinjam Barang'
-    })
+    });
+
     return (
       <>
         <Navbar navbarTitle='Codepelita Pinjamin' />
-        <div className="w-1/2 border border-slate-500 p-20 mx-auto mt-20 mb-20 rounded-xl shadow-lg shadow-black/20"> 
+        <div className="w-full md:w-1/2 md:border md:border-slate-500 md:p-20 px-5 py-10 md:mx-auto md:mt-20 mb-20 md:rounded-xl md:shadow-lg md:shadow-black/20"> 
             <h2 className="text-3xl font-bold mb-10 text-black" data-aos="fade-down" data-aos-duration="1500"><span className="text-[#03C988]">Pinjam</span> Barang</h2>
             <form action="">
                 <div className="pb-5">
-                    <Label>Nama Barang Yang Dipinjam</Label>
+                    <Label>Nama barang yang dipinjam</Label>
                     <Input 
                       type='text'
-                      placeholder='Masukan Nama Barang'
+                      placeholder='Nama barang yang dipinjam'
                       name='item_name_borrowed'
                       id='item_name_borrowed'
                     />
                 </div>
                 <div className="pb-5">
-                    <Label>Nama Barang Yang Dipinjam</Label>
+                    <Label>Nama yang meminjam</Label>
                     <Input 
                       type='text'
-                      placeholder='Masukan Nama Barang'
+                      placeholder='Nama yang meminjam'
                       name='item_name_borrowed'
                       id='item_name_borrowed'
                     />
                 </div>
                 <div className="pb-5">
-                    <Label>Nama Barang Yang Dipinjam</Label>
+                    <Label>Kontak</Label>
                     <Input 
                       type='text'
-                      placeholder='Masukan Nama Barang'
+                      placeholder='Kontak'
                       name='item_name_borrowed'
                       id='item_name_borrowed'
                     />
                 </div>
                 <div className="pb-5">
-                    <Label>Nama Barang Yang Dipinjam</Label>
+                    <Label>Kode barang</Label>
                     <Input 
                       type='text'
-                      placeholder='Masukan Nama Barang'
+                      placeholder='Kode barang'
                       name='item_name_borrowed'
                       id='item_name_borrowed'
                     />
                 </div>
                 <div className="pb-5">
-                    <Label>Nama Barang Yang Dipinjam</Label>
+                    <Label>Tanggal barang dipinjam</Label>
                     <Input 
                       type='text'
-                      placeholder='Masukan Nama Barang'
+                      placeholder='Tanggal barang dipinjam'
                       name='item_name_borrowed'
                       id='item_name_borrowed'
                     />

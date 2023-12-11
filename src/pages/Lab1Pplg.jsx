@@ -20,7 +20,7 @@ const Lab1Pplg = () => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'http://200.100.0.43:4000/api/v1/laboratories/per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
+            url: 'http://200.100.0.59:4000/api/v1/laboratories/per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
             // url: `${process.env.REACT_APP_LOCAL_PORT}/laboratories/per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9`
         })
         .then((res) => {
@@ -35,7 +35,7 @@ const Lab1Pplg = () => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'http://200.100.0.43:4000/api/v1/laboratories/spec-per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
+            url: 'http://200.100.0.59:4000/api/v1/laboratories/spec-per-lab/d565203b-ed98-4fca-880c-2be3cbd43cc9'
         })
         .then((res) => {
             return setSpec(res.data.data);
@@ -62,7 +62,7 @@ const Lab1Pplg = () => {
             if (result.isConfirmed) {
               axios({
                 method: 'DELETE',
-                url: `http://200.100.0.43:4000/api/v1/items/${id}`
+                url: `http://200.100.0.59:4000/api/v1/items/${id}`
               })
               Swal.fire(
                 'Deleted!',

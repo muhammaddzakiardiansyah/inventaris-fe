@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = (props) => {
+  const location = useLocation();
   const { navbarTitle } = props
   const [icon, setIcon] = useState(false);
 
@@ -31,9 +32,9 @@ const Navbar = (props) => {
             </span>
         </div>
         <ul className="md:flex absolute bg-slate-100 md:bg-transparent mt-5 left-0 md:p-0 p-3 w-full mr-5 z-[10] md:z-auto md:static md:mt-1 md:w-auto md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 text-black cursor-pointer">
-            <Link to={'/codepelita-pinjamin'}><li className="px-5 font-semibold py-3 hover:text-[#03C988]">Home</li></Link>
-            <Link to={'/codepelita-pinjam'}><li className="px-5 font-semibold py-3 hover:text-[#03C988]">Peminjaman Barang</li></Link>
-            <Link to={'/codepelita-pulangin'}><li className="px-5 font-semibold py-3 hover:text-[#03C988]">Pengembalian Barang</li></Link>
+            <Link to={'/codepelita-pinjamin'}><li className={`px-5 font-semibold py-3 hover:text-[#03C988] ${location.pathname === '/codepelita-pinjamin' ? `text-[#03C988]` : ''}`}>Home</li></Link>
+            <Link to={'/codepelita-pinjam'}><li className={`px-5 font-semibold py-3 hover:text-[#03C988] ${location.pathname === '/codepelita-pinjam' ? `text-[#03C988]` : ''}`}>Peminjaman Barang</li></Link>
+            <Link to={'/codepelita-pulangin'}><li className={`px-5 font-semibold py-3 hover:text-[#03C988] ${location.pathname === '/codepelita-pulangin' ? `text-[#03C988]` : ''}`}>Pengembalian Barang</li></Link>
         </ul>
         </nav>
   );

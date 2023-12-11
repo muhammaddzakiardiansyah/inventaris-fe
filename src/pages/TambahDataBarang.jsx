@@ -24,7 +24,7 @@ const TambahDataBarang = () => {
       e.preventDefault();
       const result = await axios({
         method: "POST",
-        url: "http://200.100.0.43:4000/api/v1/items",
+        url: "http://200.100.0.59:4000/api/v1/items",
         data: tambahDataBarang,
       });
       Swal.fire("Created!", "Request has successed!", "success");

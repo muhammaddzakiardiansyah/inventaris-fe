@@ -18,7 +18,7 @@ const TambahSpekDataBarang = () => {
         try {
             const result = await axios({
                 method: 'POST',
-                url: 'http://200.100.0.43/api/v1/specifications',
+                url: 'http://200.100.0.59/api/v1/specifications',
                 data: tambahSpekDataBarang,
             })
             Swal.fire(

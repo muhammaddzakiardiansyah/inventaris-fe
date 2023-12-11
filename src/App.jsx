@@ -31,6 +31,8 @@ import TambahBarangDipinjam from './pages/TambahBarangDipinjam';
 import PulanginBarangDipinjam from './pages/PulanginBarangDipinjam';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import DataBarangDipulangkan from './pages/DataBarangDipulangkan';
+import EditDataBarangDipulangkan from './pages/EditDataBarangDipulangkan';
 
 function App() {
 
@@ -56,10 +58,12 @@ function App() {
         <Route exact path='/data-semua-barang' element={<DataSemuaBarang />} />
         <Route exact path='/data-spek-semua-barang' element={<DataSpekSemuaBarang />} />
         <Route exact path='/data-barang-dipinjam' element={<DataBarangDipinjam />} />
+        <Route exact path='/data-barang-dipulangkan' element={<DataBarangDipulangkan />} />
         <Route exact path='/tambah-data-barang' element={<TambahDataBarang />} />
         <Route exact path='/tambah-spek-data-barang' element={<TambahSpekDataBarang />} />
         <Route exact path='/edit-data-barang/:id' element={<EditDataSemuaBarang />} />
         <Route exact path='/edit-spek-data-barang/:id' element={<EditSpekDataBarang />} />
+        <Route exact path='/edit-data-barang-dipulangkan/:id' element={<EditDataBarangDipulangkan />} />
         <Route exact path='/data-semua-lab' element={<DataSemuaLab />} />
         <Route exact path='/tambah-lab' element={<TambahDataLab />} />
         <Route exact path='/edit-lab/:id' element={<EditDataLab />} />

@@ -34,6 +34,8 @@ import 'aos/dist/aos.css';
 import DataBarangDipulangkan from './pages/DataBarangDipulangkan';
 import EditDataBarangDipulangkan from './pages/EditDataBarangDipulangkan';
 import Login from './pages/LoginPage';
+import PrivateRoute from './components/PrivateRoute';
+import LoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -55,27 +57,24 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
-        {/* login url */}
-        <Route exact path='/login' element={<Login />} />
-        {/* url dashboard */}
-        <Route exact path="/dashboard" element={<DashboardPage />} />
-        <Route exact path='/data-semua-barang' element={<DataSemuaBarang />} />
-        <Route exact path='/data-spek-semua-barang' element={<DataSpekSemuaBarang />} />
-        <Route exact path='/data-barang-dipinjam' element={<DataBarangDipinjam />} />
-        <Route exact path='/data-barang-dipulangkan' element={<DataBarangDipulangkan />} />
-        <Route exact path='/tambah-data-barang' element={<TambahDataBarang />} />
-        <Route exact path='/tambah-spek-data-barang' element={<TambahSpekDataBarang />} />
-        <Route exact path='/edit-data-barang/:id' element={<EditDataSemuaBarang />} />
-        <Route exact path='/edit-spek-data-barang/:id' element={<EditSpekDataBarang />} />
-        <Route exact path='/edit-data-barang-dipulangkan/:id' element={<EditDataBarangDipulangkan />} />
-        <Route exact path='/data-semua-lab' element={<DataSemuaLab />} />
-        <Route exact path='/tambah-lab' element={<TambahDataLab />} />
-        <Route exact path='/edit-lab/:id' element={<EditDataLab />} />
-        {/* url lab pplg */}
-        <Route exact path="/lab-1-pplg" element={<Lab1Pplg />} />
-        <Route exact path="/lab-2-pplg" element={<Lab2Pplg />} />
-        <Route exact path="/lab-3-pplg" element={<Lab3Pplg />} />
-        <Route exact path="/lab-4-pplg" element={<Lab4Pplg />} />
+        {/* login page */}
+      <Route exact path='/login' element={<LoginPage />} />
+      {/* url dashboard */}
+      <Route exact path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
+      <Route exact path='/data-semua-barang' element={<PrivateRoute><DataSemuaBarang /></PrivateRoute>} />
+      <Route exact path='/data-spek-semua-barang' element={<PrivateRoute><DataSpekSemuaBarang /></PrivateRoute>} />
+      <Route exact path='/tambah-data-barang' element={<PrivateRoute><TambahDataBarang /></PrivateRoute>} />
+      <Route exact path='/tambah-spek-data-barang' element={<PrivateRoute><TambahSpekDataBarang /></PrivateRoute>} />
+      <Route exact path='/edit-data-barang/:id' element={<PrivateRoute><EditDataSemuaBarang /></PrivateRoute>} />
+      <Route exact path='/edit-spek-data-barang/:id' element={<PrivateRoute><EditSpekDataBarang /></PrivateRoute>} />
+      <Route exact path='/data-semua-lab' element={<PrivateRoute><DataSemuaLab /></PrivateRoute>} />
+      <Route exact path='/tambah-lab' element={<PrivateRoute><TambahDataLab /></PrivateRoute>} />
+      <Route exact path='/edit-lab/:id' element={<PrivateRoute><EditDataLab /></PrivateRoute>} />
+      {/* url lab pplg */}
+      <Route exact path="/lab-1-pplg" element={<PrivateRoute><Lab1Pplg /></PrivateRoute>} />
+      <Route exact path="/lab-2-pplg" element={<PrivateRoute><Lab2Pplg /></PrivateRoute>} />
+      <Route exact path="/lab-3-pplg" element={<PrivateRoute><Lab3Pplg /></PrivateRoute>} />
+      <Route exact path="/lab-4-pplg" element={<PrivateRoute><Lab4Pplg /></PrivateRoute>} />
         {/* url not found */}
         <Route exact path="/*" element={<PageNotFound />} />
 

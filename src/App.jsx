@@ -33,9 +33,9 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import DataBarangDipulangkan from './pages/DataBarangDipulangkan';
 import EditDataBarangDipulangkan from './pages/EditDataBarangDipulangkan';
-import Login from './pages/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
 import LoginPage from './pages/LoginPage';
+import CreatePDF from './pages/CreatePDF';
 
 function App() {
 
@@ -70,6 +70,8 @@ function App() {
       <Route exact path='/data-semua-lab' element={<PrivateRoute><DataSemuaLab /></PrivateRoute>} />
       <Route exact path='/tambah-lab' element={<PrivateRoute><TambahDataLab /></PrivateRoute>} />
       <Route exact path='/edit-lab/:id' element={<PrivateRoute><EditDataLab /></PrivateRoute>} />
+      <Route exact path='/data-barang-dipinjam' element={<PrivateRoute><DataBarangDipinjam /></PrivateRoute>}/>
+      <Route exact path='/data-barang-dipulangkan' element={<PrivateRoute><DataBarangDipulangkan /></PrivateRoute>} />
       {/* url lab pplg */}
       <Route exact path="/lab-1-pplg" element={<PrivateRoute><Lab1Pplg /></PrivateRoute>} />
       <Route exact path="/lab-2-pplg" element={<PrivateRoute><Lab2Pplg /></PrivateRoute>} />
@@ -82,6 +84,8 @@ function App() {
         <Route exact path='/codepelita-pinjamin' element={<HomeItemBorrowed />} />
         <Route exact path='/codepelita-pinjam' element={<TambahBarangDipinjam />} />
         <Route exact path='/codepelita-pulangin' element={<PulanginBarangDipinjam />} />
+
+        <Route exact path='/create-pdf' element={<CreatePDF />} />
       </Routes>
     </QueryClientProvider>
   );

@@ -61,7 +61,7 @@ function WelcomeBanner() {
 
       {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">{say}, Muhammad Dzaki</h1>
+        <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">{say}, {localStorage.getItem('username')}</h1>
         <p className="dark:text-indigo-200">Anda ingin melakukan apa hari ini?</p>
       </div>
     </div>

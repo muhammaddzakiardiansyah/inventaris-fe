@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import Button from "../components/Elements/Button";
 import Input from "../components/Elements/Input"
@@ -14,8 +15,25 @@ const TambahBarangDipinjam = () => {
       "date_borrowed": " ",
     });
 
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const result = await axios({
+          method: 'POST',
+          url: 'http://200.100.0.59:4000/api/v1/items-borrowed',
+          data: data,
+        });
+        Swal.fire("Created!", "Request has successed!", "success");
+        setTimeout(() => {
+          window.location.href = '/codepelita-pinjamin'
+        }, 1500);
+      } catch (error) {
+        Swal.fire("Error!", error.message, "error");
+      }
+    }
+
     useEffect(() => {
-        document.title = 'Pinjam Barang'
+      document.title = 'Pinjam Barang'
     });
 
     return (
@@ -31,6 +49,10 @@ const TambahBarangDipinjam = () => {
                       placeholder='Nama barang yang dipinjam'
                       name='item_name_borrowed'
                       id='item_name_borrowed'
+                      onChange={(e) => setData({
+                        ...data,
+                        item_name_borrowed: e.target.value,
+                      })}
                     />
                 </div>
                 <div className="pb-5">
@@ -38,8 +60,12 @@ const TambahBarangDipinjam = () => {
                     <Input 
                       type='text'
                       placeholder='Nama yang meminjam'
-                      name='item_name_borrowed'
-                      id='item_name_borrowed'
+                      name='borrowed_name'
+                      id='borrowed_name'
+                      onChange={(e) => setData({
+                        ...data,
+                        borrowed_name: e.target.value
+                      })}
                     />
                 </div>
                 <div className="pb-5">
@@ -47,8 +73,12 @@ const TambahBarangDipinjam = () => {
                     <Input 
                       type='text'
                       placeholder='Kontak'
-                      name='item_name_borrowed'
-                      id='item_name_borrowed'
+                      name='contact'
+                      id='contact'
+                      onChange={(e) => setData({
+                        ...data,
+                        contact: e.target.value,
+                      })}
                     />
                 </div>
                 <div className="pb-5">
@@ -56,21 +86,29 @@ const TambahBarangDipinjam = () => {
                     <Input 
                       type='text'
                       placeholder='Kode barang'
-                      name='item_name_borrowed'
-                      id='item_name_borrowed'
+                      name='item_code'
+                      id='item_code'
+                      onChange={(e) => setData({
+                        ...data,
+                        item_code: e.target.value,
+                      })}
                     />
                 </div>
                 <div className="pb-5">
                     <Label>Tanggal barang dipinjam</Label>
                     <Input 
-                      type='text'
+                      type='date'
                       placeholder='Tanggal barang dipinjam'
-                      name='item_name_borrowed'
-                      id='item_name_borrowed'
+                      name='date_borrowed'
+                      id='date_borrowed'
+                      onChange={(e) => setData({
+                        ...data,
+                        date_borrowed: e.target.value,
+                      })}
                     />
                 </div>
 
-                <Button classname='bg-[#03C988] px-5 py-2 rounded-lg font-bold mt-10'>Pinjam</Button>
+                <Button classname='bg-[#03C988] px-5 py-2 rounded-lg font-bold mt-10' onClick={handleSubmit}>Pinjam</Button>
                 <Button classname='bg-[#94c903] px-5 py-2 rounded-lg font-bold mt-10 ml-3' type='reset'>Reset</Button>
             </form>
         </div>
